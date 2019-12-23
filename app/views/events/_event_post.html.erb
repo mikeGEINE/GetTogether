@@ -1,0 +1,64 @@
+<div class="container mb-3">
+  <div class="pb-1 border-bottom row">
+    <div class ="col">  
+      <% if event.creator.avatar.attached?%>
+        <%= link_to image_tag(event.creator.avatar, class: "rounded-lg small", alt: "avatar") + full_name(event.creator), user_path(event.creator.id) %>
+      <% else %>
+        <%= link_to full_name(event.creator), user_path(event.creator.id) %>
+      <% end%>
+      • <strong><%= event.name %></strong> • <i><small class="text-muted"><%= event.created_at.strftime("%-d %b %Y %H:%M") %></small></i>
+    </div>
+    <% if event.creator == current_user%>
+      <div class = "col-3 float-right" id="control-buttons<%=event.id%>">
+        <%= link_to t('.edit'), edit_event_path(event), class: "btn btn-outline-info btn-sm" %>
+        <%= link_to t('.delete'), event, method: :delete, remote: true, class: "btn btn-outline-danger btn-sm", onclick: "inactive_on_delete(#{event.id})"%>
+      </div>
+    <% end %>
+  </div>
+  <div id="post<%=event.id%>">
+    <div class="content pb-1 border-bottom">
+      <p>
+        <%= event.description %>
+      </p>
+      <% if event.image.attached?%>
+        <img src="<%= (url_for(event.image))%>" class="rounded-lg image" alt="Avatar">
+      <%end%>
+    </div>
+
+    <div class="details pb-1 border-bottom">
+      <p>
+        <strong><%= t('.date')%></strong>
+        <%= event.date.strftime("%-d %b %Y %H:%M") %>
+      </p>
+
+      <p>
+        <strong><%= t('.address')%></strong>
+        <%= event.address%>
+      </p>
+
+      <p>
+        <strong><%= t('.type')%></strong>
+        <%= event.event_type.name%>
+      </p>
+    </div>
+
+    <div class="attendances pb-1 border-bottom row">
+      <%= render partial: 'events/attendances', locals: {event: event} %>
+      <div class="col-2">
+        <% if joined%>
+          <% unless joined.include? event%>  
+            <%= button_to t('.join'), join_path(event.id), method: :post, remote: true,
+              class: 'float-right btn btn-success', onclick: "change(#{event.id})", id: "join#{event.id}"%>
+            <%= button_to t('.leave'), leave_path(event.id), method: :post, remote: true, 
+              class: 'float-right btn btn-danger', onclick: "change(#{event.id})", id: "leave#{event.id}", hidden: true%>
+          <% else %>
+            <%= button_to t('.join'), join_path(event.id), method: :post, remote: true, 
+              class: 'float-right btn btn-success', onclick: "change(#{event.id})", id: "join#{event.id}", hidden: true%>
+            <%= button_to t('.leave'), leave_path(event.id), method: :post, remote: true, 
+              class: 'float-right btn btn-danger', onclick: "change(#{event.id})", id: "leave#{event.id}"%>
+          <% end%>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= form.label :name, t('.name'), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: "form-control", autocomplete: 'off' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :description, t('.description'), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :date, t('.date'), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.datetime_field :date, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :address, t('.address'), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+
+    <div class="form-group row">
+    <%= form.label :event_type, t('.event_type'), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.select :event_type, options_for_select(EventType.all.map{ |i| [i.name, i.id] }), {} ,{class: "custom-select"} %>
+    </div>
+  </div>
+  <%= form.hidden_field :creator, value: current_user.id%>
+  
+  <div class="form-group row">
+    <%= form.label :image, t('.image'), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.file_field :image%>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit t('.save'), class: 'btn btn-primary my-1'%>
+  </div>
+<% end %>
+

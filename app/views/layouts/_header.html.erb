@@ -1,0 +1,13 @@
+<div class="header">
+    <%= link_to 'Get Together', events_path, class: 'Logo'%>
+    <div class='float-right'>
+      <% if session[:user_id]%>
+        <%= link_to t('new_event'), new_event_path%>
+        <%= link_to t('profile'), user_path(current_user.id) %>
+        <%= link_to t('logout'), logout_path%>
+      <%else%>
+        <%= link_to t('log_in'), login_path%>
+        <%= link_to t('sign_up'), new_user_path%>
+      <%end%>
+    </div>
+</div>

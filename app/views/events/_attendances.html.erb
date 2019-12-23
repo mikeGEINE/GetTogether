@@ -1,0 +1,9 @@
+<div id="<%= event.id%>" class="col-10">
+  <% event.attendances.each do |user| %>
+    <% if user.avatar.attached? %>
+        <%= link_to image_tag(user.avatar, class: "rounded-lg mini", alt: full_name(user)),user_path(user.id)%>
+      <% else %>
+        <%= link_to initials(event.creator), user_path(event.creator.id) %>
+      <% end%>
+  <% end %>
+</div>

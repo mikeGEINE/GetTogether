@@ -1,0 +1,21 @@
+<% if alert%>
+    <p id="alert" class="alert alert-danger"><%= alert %></p>
+<% end%>
+<div class="d-flex justify-content-center align-items-center">
+<div class="col-5">
+<h1><%= t('.login')%></h1>
+<%= form_tag sessions_path do |form| %>
+  <div class="field">
+    <%= label_tag :email, t('.email') %>
+    <%= email_field_tag :email, nil, class: 'form-control', autocomplete: 'off' %>
+  </div>
+  <div class="field">
+    <%= label_tag :password, t('.password') %>
+    <%= password_field_tag :password, nil, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= submit_tag t('.login'), class: 'btn btn-primary my-1' %>
+  </div>
+<% end %>
+</div>
+</div>

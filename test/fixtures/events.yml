@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  date: 2019-12-07 20:22:41
+  address: MyAddress
+  event_type: one
+  creator: one
+  attendances: one
+
+two:
+  name: MyString
+  description: MyText
+  date: 2019-12-07 20:22:41
+  address: MyAddress
+  event_type: two
+  creator: two
+

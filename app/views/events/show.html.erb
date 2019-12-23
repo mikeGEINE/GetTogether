@@ -1,0 +1,4 @@
+<%= render partial: 'events/event_post', locals: {event: @event, joined: current_user.events} %>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,18 @@
+<div class="m-2">
+    <% if @user.avatar.attached?%>
+        <img src="<%= (url_for(@user.avatar))%>" class="rounded-lg w-100" alt="Avatar">
+    <%end%>
+
+    <table class="table">
+        <tr>
+            <th colspan="2"><%= @user.name + ' ' + @user.surname %></th>
+        <tr>
+        <tr>
+            <td colspan="2"><%= @user.mail %></td>
+        </tr>
+        <tr>
+            <td><%= link_to t('.edit'), edit_user_path(@user), class: 'btn btn-sm btn-primary' %></td>
+            <td><%= link_to(t('.destroy'), @user, method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger btn-sm') if @user == current_user %></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-5">
+    <%= render 'users/profile' %>
+  </div>
+  <div class="col-6 m-2">
+    <%= render partial: 'events/feed', locals: {events: @events} %>
+  </div>
+</div>
+

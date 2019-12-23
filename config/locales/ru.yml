@@ -1,0 +1,78 @@
+ru:
+  log_in: 'Войти'
+  sign_up: 'Зарегистрироваться'
+  logout: 'Выход'
+  profile: 'Профиль'
+  new_event: 'Создать событие'
+  require_login: 'Пожалуйста зарегистрируйтесь или войдите'
+  sessions:
+    new:
+      password: 'Пароль'
+      login: 'Вход'
+      email: 'Электронная почта'
+    create:
+      error: 'Неверная почта или пароль'
+      success: 'Выполнен вход'
+    destroy:
+      logout: 'Произведён выход!'
+  events:
+    create:
+      success: 'Событие успешно создано.'
+    update:
+      success: 'Событие успешно обновлено.'
+      editing: 'Редактирование события'
+    destroy:
+      success: 'Событие успешно удалено.'
+    event_post:
+      edit: 'Изменить'
+      delete: 'Удалить'
+      date: 'Дата:'
+      address: 'Адрес:'
+      type: 'Тип события:'
+      join: 'Участвовать!'
+      leave: 'Покинуть'
+    form:
+      name: 'Название'
+      description: 'Описание'
+      date: 'Дата'
+      address: 'Адрес'
+      event_type: 'Тип события'
+      image: 'Изображение'
+      save: 'Сохранить'
+      choose: 'Выбрать файл'
+    index: 
+      title: 'События'
+      type: 'Выбрать тип событий'
+      find: 'Найти'
+    new:
+      title: 'Новое событие'
+  users:
+    create:
+      success: 'Пользователь успешно создан.'
+    update:
+      success: 'Пользователь успешно обновлён.'
+      editing: 'Редактирование пользователя'
+    destroy:
+      success: 'Пользователь удалён.'
+    form:
+      name: 'Имя'
+      surname: 'Фамилия'
+      mail: 'Эл. почта'
+      password: 'Пароль'
+      password_confirm: 'Повторите пароль'
+      avatar: 'Аватар'
+      submit: 'Сохранить'
+      choose: 'Выбрать файл'
+    profile:
+      edit: 'Редактировать'
+      destroy: 'Удалить'
+      confirm: 'Вы уверены?'
+    edit:
+      title: 'Редактирование пользователя'
+      show: 'Показать страницу'
+      back: 'Назад'
+    index: 
+      title: 'Пользователи'
+    new:
+      title: 'Новый пользователь'
+      back: 'Назад'

@@ -1,0 +1,4 @@
+<% events.reverse.each do |event| %>
+  <%= current_user ? render(partial: 'events/event_post', locals:{event: event, joined: current_user.joined_events}) 
+  :  render(partial: 'events/event_post', locals:{event: event, joined: nil}) %>
+<% end %>

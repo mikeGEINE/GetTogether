@@ -1,0 +1,18 @@
+<h1><%= t('.title')%></h1>
+<div class="row d-flex justify-content-center align-items-center">
+  <div class="col-8">
+    <%= form_with id: 'types', method: :post, url: show_type_path do |f| %>
+      <div class="form-group row">
+        <%= f.label :event_type, t('.type'), class: "col-sm-2 col-form-label"%>
+        <div class="col-sm-6">
+          <%= f.select(:event_type, options_for_select(EventType.all.map{ |i| [i.name, i.id] }) ,
+          {include_blank: true}, {class: "custom-select"}) %>
+        </div>
+        <%= f.submit t('.find'), class: 'btn btn-primary my-1 float-right'%>
+      </div>
+    <% end %>
+    <div id="feed">
+      <%= render partial: 'events/feed', locals: {events: @events} %>
+    </div>
+  </div>
+</div>
