@@ -1,110 +1,78 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  log_in: 'Log in'
-  sign_up: 'Sign up'
-  logout: 'Log out'
-  profile: 'Profile'
-  new_event: 'Create event'
-  require_login: 'Please sign up or login'
+  log_in: Log in
+  sign_up: Sign up
+  logout: Log out
+  profile: Profile
+  new_event: Create event
+  require_login: Please sign up or login
   sessions:
     new:
-      password: 'Password'
-      login: 'Login'
-      email: 'Email'
+      password: Password
+      login: Login
+      email: Email
     create:
-      error: 'Incorrect email or password!'
-      success: "Logged in!"
+      error: Incorrect email or password!
+      success: Logged in!
     destroy:
-      logout: "Logged out!"
+      logout: Logged out!
   events:
     create:
-      success: 'Event was successfully created.'
+      success: Event was successfully created.
     update:
-      success: 'Event was successfully updated.'
-      editing: 'Editing Event'
+      success: Event was successfully updated.
+      editing: Editing Event
     destroy:
-      success: 'Event was successfully destroyed.'
+      success: Event was successfully destroyed.
     event_post:
-      edit: 'Edit'
-      delete: 'Delete'
+      edit: Edit
+      delete: Delete
       date: 'Date:'
-      address: 'Addreess:'
+      address: 'Address:'
       type: 'Event type:'
-      join: 'Join!'
-      leave: 'Leave'
+      join: Join!
+      leave: Leave
     form:
-      name: 'Name'
-      description: 'Description'
-      date: 'Date'
-      address: 'Address'
-      event_type: 'Event type'
-      image: 'Image'
-      save: 'Save'
-      choose: 'Choose file'
-    index: 
-      title: 'Events'
-      type: 'Choose event type'
-      find: 'Find events'
+      name: Name
+      description: Description
+      date: Date
+      address: Address
+      event_type: Event type
+      image: Image
+      save: Save
+      choose: Choose file
+    index:
+      title: Events
+      type: Choose event type
+      find: Find events
     new:
-      title: 'New Events'
+      title: New Events
   users:
     create:
-      success: 'User was successfully created.'
+      success: User was successfully created.
     update:
-      success: 'User was successfully updated.'
-      editing: 'Editing User'
+      success: User was successfully updated.
+      editing: Editing User
     destroy:
-      success: 'User was successfully destroyed.'
+      success: User was successfully destroyed.
     form:
-      name: 'Name'
-      surname: 'Surname'
-      mail: 'E-mail'
-      password: 'Password'
-      password_confirm: 'Confirm password'
-      avatar: 'Avatar'
-      submit: 'Submit'
-      choose: 'Choose file'
+      name: Name
+      surname: Surname
+      mail: E-mail
+      password: Password
+      password_confirm: Confirm password
+      avatar: Avatar
+      submit: Submit
+      choose: Choose file
     profile:
-      edit: 'Edit'
-      destroy: 'Destroy'
-      confirm: 'Are you sure?'
+      edit: Edit
+      destroy: Destroy
+      confirm: Are you sure?
     edit:
-      title: 'Editing User'
-      show: 'Show'
-      back: 'Back'
-    index: 
-      title: 'Users'
+      title: Editing User
+      show: Show
+      back: Back
+    index:
+      title: Users
     new:
-      title: 'New User'
-      back: 'Back'
-
+      title: New User
+      back: Back
