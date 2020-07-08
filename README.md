@@ -11,6 +11,4 @@ To run this application you need to:
 
 * Run 'rails s' to start the app on the localhost
 
-Enjoy!
-
-This line was added in order to check automations.
+Enjoy!!!
